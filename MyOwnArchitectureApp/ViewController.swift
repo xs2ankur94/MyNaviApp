@@ -50,11 +50,18 @@ struct Observable<T> {
 
 class ViewController: UIViewController {
 
+    
+    let tableView = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
 
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+}
