@@ -68,4 +68,8 @@ extension NaviViewController: UITableViewDelegate, UITableViewDataSource {
         let requestDetail = requestViewModel.requestData.value![indexPath.row]
         self.requestCoordinator?.navigateToDetailRequestVC(requestDetail: requestDetail, imageData: requestViewModel.getImageData(indexPath: indexPath))
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+          return 150
+    }
 }

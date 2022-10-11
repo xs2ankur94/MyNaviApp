@@ -23,8 +23,6 @@ class RequestDetailViewController: UIViewController, StoryboardInitProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.detailImageView.layer.cornerRadius = 5
-        self.detailImageView.layer.masksToBounds = true
         self.detailImageView.image = UIImage.init(named: "defaultPlaceholder")
 //        setUpViews()
         detailViewModel.requestDetail.bind { [unowned self] requestDetail in
