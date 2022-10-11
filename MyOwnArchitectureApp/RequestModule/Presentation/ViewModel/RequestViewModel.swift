@@ -38,7 +38,8 @@ class RequestViewModel : RequestViewModelProtocol {
                 onCompletion(data)
             } else {
                 if let url = requestDetail.user.imageUrl {
-                    requestRepository.downloadImage(urlPath: url) { data in
+                    requestRepository.downloadImage(urlPath: url) { [weak self] data in
+                        self?.downloadedImages[requestDetail.uniqueId] = data
                         onCompletion(data)
                     }
                 }
