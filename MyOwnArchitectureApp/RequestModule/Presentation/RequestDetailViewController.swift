@@ -31,11 +31,11 @@ class RequestDetailViewController: UIViewController, StoryboardInitProtocol {
             self.titleLabel.text = requestDetail?.user.name
             self.descriptionLabel.text = requestDetail?.title
             if let createdDate = requestDetail?.createdDate {
-                self.createdDateLabel.text = createdDate
+                self.createdDateLabel.text = "Created Date:  \(createdDate)"
             }
             
             if let closedDate = requestDetail?.closedDate {
-                self.closedDateLabel.text = closedDate
+                self.closedDateLabel.text = "Closed Date:  \(closedDate)"
             }
        }
         

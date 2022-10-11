@@ -19,20 +19,19 @@ class MyNaviCell: UITableViewCell {
   
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.imgView.image = nil
-        self.imgView.layer.cornerRadius = 5
-        self.imgView.layer.masksToBounds = true
+        self.imgView.image = UIImage.init(named: "defaultPlaceholder")
     }
     
     func configureCell(requestDetail: RequestDetail) {
         self.titleLabel.text = requestDetail.user.name
         self.descriptionLabel.text = requestDetail.title
         self.dateLabel.text = "Created Date: \(requestDetail.createdDate)"
+        self.imgView.layer.cornerRadius = 5
+        self.imgView.layer.masksToBounds = true
     }
     
     func configureImage(forData data: Data?) {
         guard let data = data, let image = UIImage.init(data: data) else {
-            self.imgView.image = UIImage.init(named: "defaultPlaceholder")
             return
         }
         self.imgView.image = image
