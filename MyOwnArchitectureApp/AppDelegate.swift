@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MyOwnArchitectureApp
 //
-//  Created by Ankur Chaudhary on 03/10/22.
+//  Created by Ankur Chaudhary on 10/10/22.
 //
 
 import UIKit
