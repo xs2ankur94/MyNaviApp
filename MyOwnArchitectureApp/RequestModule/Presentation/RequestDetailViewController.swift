@@ -23,19 +23,17 @@ class RequestDetailViewController: UIViewController, StoryboardInitProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.detailImageView.layer.cornerRadius = 5
-        self.detailImageView.layer.masksToBounds = true
         self.detailImageView.image = UIImage.init(named: "defaultPlaceholder")
 //        setUpViews()
         detailViewModel.requestDetail.bind { [unowned self] requestDetail in
             self.titleLabel.text = requestDetail?.user.name
             self.descriptionLabel.text = requestDetail?.title
             if let createdDate = requestDetail?.createdDate {
-                self.createdDateLabel.text = createdDate
+                self.createdDateLabel.text = "Created Date:  \(createdDate)"
             }
             
             if let closedDate = requestDetail?.closedDate {
-                self.closedDateLabel.text = closedDate
+                self.closedDateLabel.text = "Closed Date:  \(closedDate)"
             }
        }
         
